@@ -1,8 +1,11 @@
+import Login from "./components/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Signup from "./components/Signup";
+
+
 function App() {
     return (
-        <div>
-            <h1 className="text-red-500 text-4xl">Hello World !!</h1>
-        </div>
+        <h1>Hello App</h1>
     );
 }
 
