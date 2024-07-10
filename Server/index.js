@@ -2,6 +2,7 @@ import express from "express";
 import passport from "passport";
 import LocalStrategy from "passport-local";
 import pg from "pg";
+import bcrypt from "bcrypt";
 
 const port = 3000;
 const app = express();
@@ -17,7 +18,7 @@ db.connect();
 passport.use(
     new LocalStrategy(async (USERNAME, PASSWORD, done) => {
         try {
-            console.log(`Recieved Credentials are - ${USERNAME} & ${PASSWORD}`);
+            // console.log(`Recieved Credentials are - ${USERNAME} & ${PASSWORD}`);
             const json = await db.query(
                 "SELECT * FROM user_info WHERE username=$1",
                 [USERNAME]
